@@ -1,15 +1,33 @@
-import { Text, View } from "react-native";
+import RootLayout from "./_layout";
+import "../../global.css";
+import {
+  useFonts,
+  Sora_400Regular,
+  Sora_500Medium,
+  Sora_600SemiBold,
+  Sora_700Bold,
+} from "@expo-google-fonts/sora";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import * as SplashScreen from "expo-splash-screen";
 
-export default function Index() {
+SplashScreen.preventAutoHideAsync();
+const queryClient = new QueryClient();
+
+export default function App() {
+  const [fontsLoaded] = useFonts({
+    Sora_400Regular,
+    Sora_500Medium,
+    Sora_600SemiBold,
+    Sora_700Bold,
+  });
+
+  if (fontsLoaded) {
+    SplashScreen.hideAsync();
+  }
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <QueryClientProvider client={queryClient}>
+      <RootLayout />
+    </QueryClientProvider>
   );
 }
