@@ -12,7 +12,7 @@ module.exports = function (api) {
         {
           alias: {
             "@components": "./src/common/components",
-            "@config": "./src/config",
+            "@config": "./src/common/config",
             "@styles": "./src/common/styles",
           },
           extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],

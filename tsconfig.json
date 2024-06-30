@@ -8,7 +8,7 @@
         "common/components/*"
       ],
       "@config/*": [
-        "config/*"
+        "common/config/*"
       ],
       "@styles/*": [
         "common/styles/*"
