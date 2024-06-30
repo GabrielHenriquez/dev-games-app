@@ -7,7 +7,7 @@ export const API = axios.create({
 API.interceptors.request.use((config) => {
   config.params = {
     ...config.params,
-    key: "",
+    key: process.env.EXPO_PUBLIC_KEY,
   };
   return config;
 });
