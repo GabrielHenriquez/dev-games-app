@@ -7,6 +7,17 @@ module.exports = function (api) {
     ],
     plugins: [
       "react-native-reanimated/plugin",
-    ]
+      [
+        "module-resolver",
+        {
+          alias: {
+            "@components": "./src/common/components",
+            "@config": "./src/common/config",
+            "@styles": "./src/common/styles",
+          },
+          extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
+        },
+      ],
+    ],
   };
 };
