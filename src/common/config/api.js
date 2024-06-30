@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API = axios.create({
+const API = axios.create({
   baseURL: "https://api.rawg.io/api",
 });
 
