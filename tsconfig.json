@@ -13,6 +13,9 @@
       "@styles/*": [
         "common/styles/*"
       ],
+      "@assets/*": [
+        "assets/*"
+      ],
     }
   },
   "include": [
