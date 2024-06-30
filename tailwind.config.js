@@ -1,4 +1,5 @@
-import { colors } from "./src/common/styles/Colors";
+import { colors } from "./src/common/styles/colors";
+import { fontsFamily } from "./src/common/styles/fonts";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -6,13 +7,8 @@ module.exports = {
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
-      colors: colors,
-      fontfamily: {
-        regular: "Sora_400Regular",
-        medium: "Sora_500Medium",
-        semiBold: "Sora_600SemiBold",
-        bold: "Sora_700Bold",
-      },
+      colors,
+      fontsFamily,
     },
   },
   plugins: [],
