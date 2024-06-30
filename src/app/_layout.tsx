@@ -1,5 +1,6 @@
-import { Stack } from "expo-router";
-import "@styles/global.css";
+import { Stack } from 'expo-router';
+import '@styles/global.css';
+import * as Native from 'react-native';
 
 import {
   useFonts,
@@ -7,9 +8,9 @@ import {
   Sora_500Medium,
   Sora_600SemiBold,
   Sora_700Bold,
-} from "@expo-google-fonts/sora";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import * as SplashScreen from "expo-splash-screen";
+} from '@expo-google-fonts/sora';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import * as SplashScreen from 'expo-splash-screen';
 
 SplashScreen.preventAutoHideAsync();
 const queryClient = new QueryClient();
