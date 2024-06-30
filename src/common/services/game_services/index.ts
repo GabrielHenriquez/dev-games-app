@@ -1,13 +1,33 @@
 import API from "@config/api";
-import { IGame } from "./models";
+import { ICategory, IGame, IGameDetails } from "./models";
 
 class GameServices {
-  static async getAllGames(page_size?: string): Promise<IGame[]> {
-    const { data } = await API.get("/games", {
-      params: { page_size: page_size ?? "0" },
+  private static async fetchGames(params?: any): Promise<IGame[]> {
+    const { data } = await API.get("games", {
+      params,
     });
+    return data?.results || [];
+  }
+  static async getAllGames(page_size?: string): Promise<IGame[]> {
+    return this.fetchGames({ page_size: page_size ?? "0" });
+  }
 
-    return data;
+  static async searchGameByName(search: string): Promise<IGame[]> {
+    return this.fetchGames({ search });
+  }
+
+  static async getGamesByCategory(genres: string): Promise<IGame[]> {
+    return this.fetchGames({ genres });
+  }
+
+  static async getAllCategories(): Promise<ICategory[]> {
+    const { data } = await API.get("genres");
+    return data?.results || [];
+  }
+
+  static async getGameDetails(slug: string): Promise<IGameDetails> {
+    const { data } = await API.get(`games/${slug}`);
+    return data || {};
   }
 }
 
