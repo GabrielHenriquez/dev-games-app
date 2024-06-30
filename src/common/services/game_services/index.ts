@@ -8,8 +8,8 @@ class GameServices {
     });
     return data?.results || [];
   }
-  static async getAllGames(page_size?: string): Promise<IGame[]> {
-    return this.fetchGames({ page_size: page_size ?? "0" });
+  static async getAllGames(page_size: string = "0"): Promise<IGame[]> {
+    return this.fetchGames({ page_size });
   }
 
   static async searchGameByName(search: string): Promise<IGame[]> {
