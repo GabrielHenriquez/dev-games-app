@@ -1,6 +1,6 @@
 export const fontsFamily = {
-  regular: "Sora_400Regular",
-  medium: "Sora_500Medium",
-  semiBold: "Sora_600SemiBold",
-  bold: "Sora_700Bold",
+  sora_regular: 'Sora_400Regular',
+  sora_medium: 'Sora_500Medium',
+  sora_semiBold: 'Sora_600SemiBold',
+  sora_bold: 'Sora_700Bold',
 };
