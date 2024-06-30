@@ -8,8 +8,10 @@ import {
   Sora_600SemiBold,
   Sora_700Bold,
 } from "@expo-google-fonts/sora";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 SplashScreen.preventAutoHideAsync();
+const queryClient = new QueryClient();
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -24,8 +26,10 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack>
-      <Stack.Screen name="index" />
-    </Stack>
+    <QueryClientProvider client={queryClient}>
+      <Stack>
+        <Stack.Screen name="index" />
+      </Stack>
+    </QueryClientProvider>
   );
 }
