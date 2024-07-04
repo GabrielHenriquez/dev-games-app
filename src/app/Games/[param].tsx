@@ -7,20 +7,13 @@ import Button from '@components/Button';
 import GameNotFound from '@components/GameNotFound';
 import IconArrowBack from '@assets/icons/arrow-left.svg';
 import { Text } from 'react-native';
-import { useEffect } from 'react';
 import { useRouter } from 'expo-router';
-import { useQueryClient } from '@tanstack/react-query';
 import { useGamesViewModel } from './view.model';
 import { DataTypeScreen } from './model';
 
 const GamesView = () => {
   const { back } = useRouter();
-  const queryClient = useQueryClient();
   const VIEW_MODEL = useGamesViewModel();
-
-  useEffect(() => {
-    queryClient.invalidateQueries({ queryKey: ['getAllFavorites'] });
-  }, [VIEW_MODEL?.favorites]);
 
   return (
     <Container>

@@ -1,7 +1,7 @@
 import { useFavorites } from '@hooks/useFavorites';
 import { useGetGameDetails } from '@hooks/useGetGameDetails';
 import { useLocalSearchParams } from 'expo-router';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { Dimensions } from 'react-native';
 import { Gesture } from 'react-native-gesture-handler';
 import { useAnimatedStyle, useSharedValue, withTiming, runOnJS } from 'react-native-reanimated';
@@ -56,6 +56,14 @@ export const useGameDetailsViewModel = () => {
       transform: [{ translateX: translateX.value }],
     };
   });
+
+  useLayoutEffect(() => {
+    setMapBackgroundImages();
+  }, [data]);
+
+  useLayoutEffect(() => {
+    handleSetIsFavorite();
+  }, [favorites]);
 
   return {
     currentIndex,

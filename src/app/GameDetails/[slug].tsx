@@ -13,24 +13,16 @@ import TagList from './components/TagList';
 import ListBackgroundImages from './components/ListBackgroundImages';
 import Group from './components/Group';
 import ModalReadDescription from './components/ModalReadDescription';
+import Loading from './components/Loading';
 import { GestureDetector, GestureHandlerRootView } from 'react-native-gesture-handler';
 import { styles } from './styles';
 import { useGameDetailsViewModel } from './view.model';
 import { useRouter } from 'expo-router';
-import Loading from './components/Loading';
 import * as Native from 'react-native';
 
 const GameDetailsView = () => {
   const VIEW_MODEL = useGameDetailsViewModel();
   const ROUTER = useRouter();
-
-  React.useLayoutEffect(() => {
-    VIEW_MODEL.setMapBackgroundImages();
-  }, [VIEW_MODEL?.GAME_DETAILS]);
-
-  React.useLayoutEffect(() => {
-    VIEW_MODEL.handleSetIsFavorite();
-  }, [VIEW_MODEL?.favorites]);
 
   return (
     <GestureHandlerRootView>
