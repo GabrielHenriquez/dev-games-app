@@ -16,6 +16,15 @@
       "@assets/*": [
         "assets/*"
       ],
+      "@stores/*": [
+        "common/stores/*"
+      ],
+      "@services/*": [
+        "common/services/*"
+      ],
+      "@hooks/*": [
+        "common/hooks/*"
+      ],
     }
   },
   "include": [
