@@ -1,5 +1,5 @@
 import LogoDevGames from '@assets/images/logo-small.svg';
-import IconBookark from '@assets/icons/bookmark.svg';
+import IconBookmark from '@assets/icons/bookmark.svg';
 import Container from '@components/Container';
 import RoundedButton from '@components/RoundedButton';
 import SearchInput from '@components/SearchInput';
@@ -7,25 +7,21 @@ import Spacer from '@components/Spacer';
 import LoadingCategory from '@components/LoadingCategory';
 import LoadingGames from '@components/LoadingGames';
 import GameList from '@components/GameList';
-import CategoriesList from '@components/CategoriesList';
+import CategoriesList from '@components/GenresList';
 import { colors } from '@styles/colors';
-import { useGetAllCategories } from 'common/hooks/useGetAllCategories';
-import { useGetAllGames } from 'common/hooks/useGetAllGames';
+import { useHomeViewModel } from './view.model';
 import * as Native from 'react-native';
 
-const Home = () => {
-  const { data: CATEGORIES, isLoading: LOADING_CATEGORIES } = useGetAllCategories();
-  const { data: GAMES, isLoading: LOADING_ALL_GAMES } = useGetAllGames('40');
+const HomeView = () => {
+  const VIEW_MODEL = useHomeViewModel();
 
   return (
     <Container>
-      <Native.StatusBar barStyle={'light-content'} />
-
       <Native.View className="flex-row items-center justify-between px-3">
         <LogoDevGames />
 
-        <RoundedButton type={'headerLight'}>
-          <IconBookark />
+        <RoundedButton type={'headerLight'} onPress={VIEW_MODEL.navigateFavorites}>
+          <IconBookmark />
         </RoundedButton>
       </Native.View>
 
@@ -36,17 +32,19 @@ const Home = () => {
           <SearchInput.Input
             placeholder="Looking for a game?"
             placeholderTextColor={colors.white_two}
+            value={VIEW_MODEL.valueText}
+            onChangeText={VIEW_MODEL.setValueText}
           />
-          <SearchInput.Button />
+          <SearchInput.Button onPress={VIEW_MODEL.navigateGamesBySearch} />
         </SearchInput.Content>
       </Native.View>
 
       <Spacer className="h-8" />
 
-      {LOADING_ALL_GAMES && LOADING_CATEGORIES ? (
+      {VIEW_MODEL.LOADING_ALL_GAMES && VIEW_MODEL.LOADING_CATEGORIES ? (
         <LoadingCategory />
       ) : (
-        <CategoriesList data={CATEGORIES!} />
+        <CategoriesList data={VIEW_MODEL.CATEGORIES!} />
       )}
 
       <Spacer className="h-8" />
@@ -55,9 +53,13 @@ const Home = () => {
         Trending games
       </Native.Text>
 
-      {LOADING_ALL_GAMES && LOADING_CATEGORIES ? <LoadingGames /> : <GameList data={GAMES!} />}
+      {VIEW_MODEL.LOADING_ALL_GAMES && VIEW_MODEL.LOADING_CATEGORIES ? (
+        <LoadingGames />
+      ) : (
+        <GameList data={VIEW_MODEL.GAMES!} />
+      )}
     </Container>
   );
 };
 
-export default Home;
+export default HomeView;
