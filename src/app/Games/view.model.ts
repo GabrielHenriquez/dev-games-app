@@ -5,7 +5,7 @@ import { useGetGamesBySearch } from '@hooks/useGetGamesBySearch';
 import { useLocalSearchParams } from 'expo-router';
 import { DataTypeScreen } from './model';
 import { UseQueryResult } from '@tanstack/react-query';
-import { IGame, IGameDetails } from '@services/games_services';
+import { IGame, IGameDetails } from '@services/games_services_models';
 
 export const useGamesViewModel = () => {
   const { param: PARAM, screenName: DATA_TYPE_SCREEN, genreName: GENRE } = useLocalSearchParams();

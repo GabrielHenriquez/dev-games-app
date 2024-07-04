@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import { useRouter } from 'expo-router';
-import { ICategory } from '@services/games_services';
+import { ICategory } from '@services/games_services_models';
 import * as Native from 'react-native';
 
 const GenresList = ({ data }: { data: ICategory[] }) => {

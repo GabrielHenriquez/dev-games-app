@@ -1,6 +1,6 @@
 import { DataTypeScreen } from 'app/Games/[param]';
 import GameCard from './GameCard';
-import { IGame, IGameDetails } from 'common/services/games_services';
+import { IGame, IGameDetails } from '@services/games_services_models';
 import { useRouter } from 'expo-router';
 import RoundedButton from './RoundedButton';
 import IconTrash from '@assets/icons/trash.svg';

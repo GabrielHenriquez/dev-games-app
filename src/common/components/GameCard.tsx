@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, TouchableOpacityProps } from 'react-nativ
 import React from 'react';
 import IconStar from '@assets/icons/star.svg';
 import FastImage from 'react-native-fast-image';
-import { IGame, IGameDetails } from '@services/games_services';
+import { IGame, IGameDetails } from '@services/games_services_models';
 
 interface IGameCard extends TouchableOpacityProps {
   data: IGame | IGameDetails;

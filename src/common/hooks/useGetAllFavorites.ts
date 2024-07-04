@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { IGameDetails } from '@services/games_services';
+import { IGameDetails } from '@services/games_services_models';
 import { storage } from 'storage/mmkv';
 
 export const useGetAllFavorites = () => {

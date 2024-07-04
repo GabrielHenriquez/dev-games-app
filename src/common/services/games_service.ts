@@ -1,5 +1,5 @@
 import API from '@config/api';
-import { ICategory, IGame, IGameDetails } from './games_services';
+import { ICategory, IGame, IGameDetails } from './games_services_models';
 
 class GameServices {
   private static async fetchGames(params?: any): Promise<IGame[]> {

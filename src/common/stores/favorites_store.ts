@@ -1,4 +1,4 @@
-import { IGameDetails } from '@services/games_services';
+import { IGameDetails } from '@services/games_services_models';
 import { storage } from 'storage/mmkv';
 import { create } from 'zustand';
 

@@ -1,4 +1,4 @@
-import { IGameDetails } from '@services/games_services';
+import { IGameDetails } from '@services/games_services_models';
 import { useFavoritesStore } from '@stores/favorites_store';
 
 export const useFavorites = () => {

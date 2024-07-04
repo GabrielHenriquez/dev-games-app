@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { IGame } from '@services/games_services';
-import GameServices from '@services/games_service_models';
+import { IGame } from '@services/games_services_models';
+import GameServices from '@services/games_service';
 
 export const useGetAllGames = (page_size: string = '0') => {
   const query = useQuery<IGame[]>({
