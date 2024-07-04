@@ -1,18 +1,16 @@
+import { colors } from '@styles/colors';
 import { ReactNode } from 'react';
-import { StatusBar, View, ViewProps } from 'react-native';
+import { ViewProps } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export interface IContainer extends ViewProps {
   children: ReactNode;
 }
 
 const Container = ({ children }: IContainer) => (
-  <View
-    className="flex-1 bg-dark_blue_primary"
-    style={{
-      paddingTop: StatusBar.currentHeight! + 20,
-    }}>
+  <SafeAreaView style={{ flex: 1, backgroundColor: colors.dark_blue_primary }}>
     {children}
-  </View>
+  </SafeAreaView>
 );
 
 export default Container;
