@@ -1,12 +1,16 @@
-import { View, Image, Text, Pressable, TouchableOpacity } from 'react-native';
-import { IGame } from 'common/services/game_services/models';
+import { View, Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import React from 'react';
 import IconStar from '@assets/icons/star.svg';
 import FastImage from 'react-native-fast-image';
+import { IGame, IGameDetails } from '@services/games_services';
 
-const GameCard = ({ data }: { data: IGame }) => {
+interface IGameCard extends TouchableOpacityProps {
+  data: IGame | IGameDetails;
+}
+
+const GameCard = ({ data, ...rest }: IGameCard) => {
   return (
-    <TouchableOpacity className="relative h-44 w-full rounded-xl bg-slate-500">
+    <TouchableOpacity {...rest} className="relative h-44 w-full rounded-xl bg-slate-500">
       <FastImage
         source={{ uri: data?.background_image, priority: 'high' }}
         style={{ position: 'absolute', width: '100%', height: 154, borderRadius: 12 }}
