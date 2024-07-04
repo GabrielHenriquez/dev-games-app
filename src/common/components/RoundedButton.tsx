@@ -10,12 +10,14 @@ interface IButton extends TouchableOpacityProps {
 
 const TYPE_STYLES: Record<ButtonTypes, string> = {
   headerLight: 'h-12 w-12 items-center justify-center rounded-full bg-dark_blue_tertiary',
-  actionButton: 'bg-bright h-16 w-16 items-center justify-center rounded-full bg-bright_red',
-  headerDark: 'h-14 w-14 items-center justify-center rounded-full bg-dark_blue_secondary',
+  actionButton: 'bg-bright h-14 w-14 items-center justify-center rounded-full bg-bright_red',
+  headerDark: 'h-14 w-14 items-center justify-center rounded-full bg-dark_blue_primary',
 };
 
-const RoundedButton = ({ children, type }: IButton) => (
-  <TouchableOpacity className={TYPE_STYLES[type]}>{children}</TouchableOpacity>
+const RoundedButton = ({ children, type, ...rest }: IButton) => (
+  <TouchableOpacity {...rest} className={TYPE_STYLES[type]}>
+    {children}
+  </TouchableOpacity>
 );
 
 export default RoundedButton;
