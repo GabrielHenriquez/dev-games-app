@@ -1,4 +1,4 @@
-rootProject.name = 'dev-games-app'
+rootProject.name = 'DevGames'
 
 dependencyResolutionManagement {
   versionCatalogs {
