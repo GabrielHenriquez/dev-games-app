@@ -2,7 +2,7 @@ import * as Native from 'react-native';
 import { createShimmerPlaceholder } from 'react-native-shimmer-placeholder';
 import { LinearGradient } from 'expo-linear-gradient';
 
-const LoadingCategory = () => {
+const LoadingCategories = () => {
   const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
   return (
     <Native.View>
@@ -26,4 +26,4 @@ const LoadingCategory = () => {
   );
 };
 
-export default LoadingCategory;
+export default LoadingCategories;

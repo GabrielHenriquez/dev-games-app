@@ -4,9 +4,9 @@ import Container from '@components/Container';
 import RoundedButton from '@components/RoundedButton';
 import SearchInput from '@components/SearchInput';
 import Spacer from '@components/Spacer';
-import LoadingCategory from '@components/LoadingCategory';
 import LoadingGames from '@components/LoadingGames';
 import GameList from '@components/GameList';
+import LoadingCategories from '@components/LoadingCategory';
 import CategoriesList from '@components/GenresList';
 import { colors } from '@styles/colors';
 import { useHomeViewModel } from './view.model';
@@ -42,7 +42,7 @@ const HomeView = () => {
       <Spacer className="h-8" />
 
       {VIEW_MODEL.LOADING_ALL_GAMES && VIEW_MODEL.LOADING_CATEGORIES ? (
-        <LoadingCategory />
+        <LoadingCategories />
       ) : (
         <CategoriesList data={VIEW_MODEL.CATEGORIES!} />
       )}
