@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { ICategory } from 'common/services/game_services/models';
-import GameServices from 'common/services/game_services';
+import { ICategory } from '@services/games_services';
+import GameServices from '@services/games_service_models';
 
 export const useGetAllCategories = () => {
   const query = useQuery<ICategory[]>({
