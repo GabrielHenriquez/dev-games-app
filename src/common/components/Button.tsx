@@ -9,8 +9,8 @@ interface IButton extends TouchableOpacityProps {
 }
 
 const TYPES_STYLES: Record<ButtonTypes, string> = {
-  back: '',
-  read_description: '',
+  back: 'w-16 justify-center items-center',
+  read_description: 'w-full bg-light_blue h-10 justify-center items-center rounded-lg',
   category: 'h-10 px-3 rounded-xl bg-gray_blue justify-center items-center',
 };
 
