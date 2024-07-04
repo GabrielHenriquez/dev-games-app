@@ -1,7 +1,5 @@
-import { Stack } from 'expo-router';
 import '@styles/global.css';
-import * as Native from 'react-native';
-
+import { Stack } from 'expo-router';
 import {
   useFonts,
   Sora_400Regular,
@@ -10,6 +8,7 @@ import {
   Sora_700Bold,
 } from '@expo-google-fonts/sora';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { StatusBar } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 
 SplashScreen.preventAutoHideAsync();
@@ -28,8 +27,11 @@ export default function RootLayout() {
   }
   return (
     <QueryClientProvider client={queryClient}>
+      <StatusBar barStyle={'default'} />
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="index" />
+        <Stack.Screen name="Games/[param]" />
+        <Stack.Screen name="GameDetails/[slug]" />
       </Stack>
     </QueryClientProvider>
   );
