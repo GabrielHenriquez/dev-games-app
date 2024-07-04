@@ -1,4 +1,4 @@
-import Home from './home/view';
+import Home from './Home/view';
 
 export default function Index() {
   return <Home />;
