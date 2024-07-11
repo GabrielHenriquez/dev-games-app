@@ -8,7 +8,7 @@ import LoadingGames from '@components/LoadingGames';
 import GameList from '@components/GameList';
 import LoadingCategories from '@components/LoadingCategory';
 import CategoriesList from '@components/GenresList';
-import { colors } from '@styles/colors';
+import { colors } from '@styles/Colors';
 import { useHomeViewModel } from './view.model';
 import * as Native from 'react-native';
 

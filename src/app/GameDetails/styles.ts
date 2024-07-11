@@ -1,4 +1,4 @@
-import { colors } from '@styles/colors';
+import { colors } from '@styles/Colors';
 import { StyleSheet } from 'nativewind';
 import { Dimensions } from 'react-native';
 

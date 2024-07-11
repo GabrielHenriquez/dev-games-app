@@ -1,4 +1,4 @@
-import { colors } from '@styles/colors';
+import { colors } from '@styles/Colors';
 import { ReactNode } from 'react';
 import { ViewProps } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
