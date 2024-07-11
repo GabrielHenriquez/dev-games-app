@@ -38,9 +38,12 @@ export const useGamesViewModel = () => {
     DATA_TYPE_SCREEN as DataTypeScreen
   );
 
-  useEffect(() => {
-    queryClient.invalidateQueries({ queryKey: ['getAllFavorites'] });
-  }, [favorites]);
+  useEffect(
+    function updateFavorites() {
+      queryClient.invalidateQueries({ queryKey: ['getAllFavorites'] });
+    },
+    [favorites]
+  );
 
   return {
     GAME: data,

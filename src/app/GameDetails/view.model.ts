@@ -57,13 +57,19 @@ export const useGameDetailsViewModel = () => {
     };
   });
 
-  useLayoutEffect(() => {
-    setMapBackgroundImages();
-  }, [data]);
+  useLayoutEffect(
+    function setBackgroundImages() {
+      setMapBackgroundImages();
+    },
+    [data]
+  );
 
-  useLayoutEffect(() => {
-    handleSetIsFavorite();
-  }, [favorites]);
+  useLayoutEffect(
+    function setFavorites() {
+      handleSetIsFavorite();
+    },
+    [favorites]
+  );
 
   return {
     currentIndex,
